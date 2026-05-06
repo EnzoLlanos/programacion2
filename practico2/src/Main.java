@@ -7,12 +7,13 @@ public class Main {
         //Asigna valores a cada posición usando el índice correspondiente.
        array[0]=1;
        array[1]=2;
+       array[2]=5;
        array[3]=3;
        array[4]=4;
     //Actualiza el valor del tercer elemento
        array[3]=55;
     //luego recupera el último elemento utilizando el atributo length para calcular su índice.
-       int indice= array.length;
+       int indice= array.length - 1;
         System.out.println(array[indice]);
 
         // arreglo de tipo String con nombres desordenados.
@@ -28,14 +29,16 @@ public class Main {
         ArrayList<String> lista = new ArrayList<>();
         //metodo add()
         lista.add("a");
-        //set() para actualizar el valor
-        lista.set(2,"b");
+        lista.add("b");
+        lista.add("c");
+
+        lista.set(2, "nuevo");
 
         //get() para recuperar el primer valor
-        String obtenerNombre = lista.get(1);
+        String obtenerNombre = lista.get(0);
         System.out.println(obtenerNombre);
         //remove() para eliminar el último.
-        lista.remove(2);
+        lista.remove(1);
 
 
         //fábrica List.of()
@@ -119,7 +122,7 @@ public class Main {
         System.out.println("Empleados Ordenados");
 
         for (Empleado e : empleados) {
-            System.out.println(e);
+            System.out.println("nombre: "+e.getNombre() + " - edad: "+e.getEdad());
         }
 
         // Ordenar por nombre usando Comparator
@@ -127,7 +130,7 @@ public class Main {
 
         System.out.println("Ordenados por nombre:");
         for (Empleado e : empleados) {
-            System.out.println(e);
+            System.out.println("nombre: "+e.getNombre() + " - edad: "+e.getEdad());
         }
     }
 
